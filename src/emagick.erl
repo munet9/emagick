@@ -271,7 +271,7 @@ format_opts(Opts) -> format_opts(Opts, []).
 format_opts([], Res) -> string:join(Res, " ");
 format_opts([Opt|Opts], Res) ->
     ArgStr =
-        "-" ++ string:join([to_string(Arg) || Arg <- tuple_to_list(Opt)], " "),
+        string:join([to_string(Arg) || Arg <- tuple_to_list(Opt)], " "),
     format_opts(Opts, Res ++ [ArgStr]).
 
 -spec to_string(term()) -> string().
